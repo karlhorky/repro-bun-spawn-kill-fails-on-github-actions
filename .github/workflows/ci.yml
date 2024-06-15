@@ -12,4 +12,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run script
-        run: bun index.ts
+        run: bun test index.test.ts
