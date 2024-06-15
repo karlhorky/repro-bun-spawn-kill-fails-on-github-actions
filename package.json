@@ -3,16 +3,10 @@
   "type": "module",
   "module": "index.ts",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "dev2": "yarn tsx childProcess.ts"
-  },
-  "dependencies": {
-    "express": "4.19.2",
-    "tsx": "4.15.5"
+    "dev": "python3 -m http.server 8000"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "@types/express": "4.17.21"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
