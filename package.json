@@ -10,5 +10,6 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "packageManager": "bun@1.1.13"
 }

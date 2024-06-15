@@ -3,19 +3,27 @@ import { sleep, spawn } from 'bun';
 const childProcess1 = spawn(['yarn', 'run', 'dev'], {
   stderr: 'pipe',
 });
-console.log('childProcess1 started with PID', childProcess1.pid);
+console.log(Date.now(), 'childProcess1 started with PID', childProcess1.pid);
 
-const stdOutPromise = new Response(childProcess1.stdout).text();
+const stdoutPromise = new Response(childProcess1.stdout).text();
 
-console.log('Sleeping for 2 seconds...');
+console.log(Date.now(), 'Sleeping for 2 seconds...');
 await sleep(1000);
 
 childProcess1.kill();
 const childProcess1ExitCode = await childProcess1.exited;
-console.log('childProcess1 exited with exit code', childProcess1ExitCode);
+console.log(
+  Date.now(),
+  'childProcess1 exited with exit code',
+  childProcess1ExitCode,
+);
 
-// 💥 Hangs
-await stdOutPromise;
+// 💥 Hangs on GitHub Actions, instant on local machine
+console.log(
+  Date.now(),
+  'Waiting for stdoutPromise to resolve (hangs on CI)...',
+);
+await stdoutPromise;
 
 // Use case: smoke testing a dev server and comparing it against snapshot
 // expect(await stdOutPromise).toMatchSnapshot();
@@ -23,7 +31,11 @@ await stdOutPromise;
 const childProcess2 = spawn(['yarn', 'run', 'dev'], {
   stderr: 'pipe',
 });
-console.log('childProcess2 started with PID', childProcess2.pid);
+console.log(Date.now(), 'childProcess2 started with PID', childProcess2.pid);
 childProcess2.kill();
 const childProcess2ExitCode = await childProcess2.exited;
-console.log('childProcess2 exited with exit code', childProcess2ExitCode);
+console.log(
+  Date.now(),
+  'childProcess2 exited with exit code',
+  childProcess2ExitCode,
+);
