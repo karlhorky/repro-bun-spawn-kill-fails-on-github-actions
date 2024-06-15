@@ -1,7 +1,13 @@
 {
   "name": "repro-bun-spawn-kill-fails-on-github-actions",
-  "module": "index.ts",
   "type": "module",
+  "module": "index.ts",
+  "scripts": {
+    "dev": "yarn tsx childProcess.ts"
+  },
+  "dependencies": {
+    "tsx": "4.15.5"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
