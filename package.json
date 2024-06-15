@@ -3,7 +3,8 @@
   "type": "module",
   "module": "index.ts",
   "scripts": {
-    "dev": "yarn tsx childProcess.ts"
+    "dev": "python3 -m http.server 8000",
+    "dev2": "yarn tsx childProcess.ts"
   },
   "dependencies": {
     "express": "4.19.2",
