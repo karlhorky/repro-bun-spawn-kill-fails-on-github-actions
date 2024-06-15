@@ -9,5 +9,7 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Run script
         run: bun index.ts
