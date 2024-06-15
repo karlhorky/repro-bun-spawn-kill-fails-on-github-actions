@@ -13,3 +13,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Run script
         run: bun test index.test.ts
+      - run: yarn run dev
+        timeout-minutes: 1
