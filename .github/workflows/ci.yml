@@ -11,6 +11,7 @@ jobs:
           bun-version: latest
       - name: Checkout
         uses: actions/checkout@v4
+      - run: bun install
       - name: Run script
         run: bun test index.test.ts
       - run: yarn run dev
