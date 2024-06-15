@@ -6,10 +6,12 @@
     "dev": "yarn tsx childProcess.ts"
   },
   "dependencies": {
+    "express": "4.19.2",
     "tsx": "4.15.5"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/express": "4.17.21"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
