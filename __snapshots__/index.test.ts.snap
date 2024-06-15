@@ -1,0 +1,9 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spawn and kill two child processes 1`] = `
+"yarn run v1.22.22
+$ yarn tsx childProcess.ts
+$ /Users/k/p/repro-bun-spawn-kill-fails-on-github-actions/node_modules/.bin/tsx childProcess.ts
+Example app listening on port 3000
+"
+`;
